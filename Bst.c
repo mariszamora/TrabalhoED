@@ -11,14 +11,19 @@ void inicializeBSTreeUsingDictionary(BSTree* pBSTree, char* fileName) {
 	//lê uma linha do arquivo;
 	//cada linha, até o \n é uma chave valor do dicionário
 	FILE* inputFile = fopen(fileName, "r");
-	int lineCounter = -1; 
+
+	if (inputFile != NULL)
+		printf("abriu arquivo \n");
+
+	int lineCounter = 0; 
 	//a leitura se dá linha a linha, uma vez que já leu uma linha, deve pular esta na proxima chamada;
 
 	struct Dictionary;
 
 	while (getc(inputFile) != EOF) {
-		char* linha = readLine(inputFile, &lineCounter);
-		printf("%s", linha);
+		unsigned char* linha = readLine(inputFile, &lineCounter);
+		printf("linha: %s", linha);
+		free(linha);
 	}
 	
 }

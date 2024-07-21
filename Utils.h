@@ -11,7 +11,7 @@ void createOutputFile(char* fileName, char* fileContent);
 //recebe os endereços dos ponteiros para as as strings de arquivos e o vetor com os parâmetros
 //deve carregar os ponteiros com as strings;
 
-char* readLine(FILE* fileName, int* counter);
+unsigned char* readLine(FILE* fileName, int* counter);
 //lê apenas uma linha do arquivo de dic
 //lê até encontrar \n
 
