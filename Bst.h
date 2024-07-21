@@ -27,6 +27,8 @@ void inicializeBSTreeUsingDictionary(BSTree *, char *);
 void processTreeInfo(struct BSTree *); //deve gerar as estatística da árvore;
 void simplifyText(struct BSTree** tree, char* text, int* counter);//simplifica o tempo, atualiza o numero de comp;
 
+Dictionary* inicializeDictionary(char* fileLane);
+//inicializa um dictionário
 
 /*
 

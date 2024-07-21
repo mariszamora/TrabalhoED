@@ -13,7 +13,7 @@ void readFileNames(char* inputFile, char* outputFile, char* dicFile, char* argv[
 	dicFile = argv[3];
 }
 
-unsigned char* readLine(FILE* pFile, int* counter) 
+unsigned char* readLine(FILE* pFile, int* counter, int* VAR_EOF) 
 {
 	int lineSize = LINE_DEFAULT_SIZE;
 	//unsigned char* line = malloc(LINE_DEFAULT_SIZE);
@@ -28,7 +28,6 @@ unsigned char* readLine(FILE* pFile, int* counter)
 	char c = ' ';
 	int readCharCounter = 0;
 	int readLineCounter = 0;
-	c = getc(pFile);
 
 	while ((c = getc(pFile)) != EOF)
 	{
@@ -61,4 +60,7 @@ unsigned char* readLine(FILE* pFile, int* counter)
 		}
 	}
 
+	*VAR_EOF = 1;
+	printf("%s", line);
+	return line;
 }
