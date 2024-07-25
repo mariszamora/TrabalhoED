@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <locale.h>
 #include "Bst.h"
 #include "Utils.h"
 
@@ -7,7 +8,7 @@
 
 int main(int argc, char *argv[])
 {
-
+	setlocale(LC_CTYPE, "pt_BR.UTF-8");
 	char* inputFileName = NULL;
 	char* outputFileName = NULL;
 	char dicFileName[] = "dicionario.txt";
@@ -23,5 +24,4 @@ int main(int argc, char *argv[])
 
 	inicializeBSTreeUsingDictionary(pBSTree, dicFileName);
 
-	printf("executou\n");
 }
