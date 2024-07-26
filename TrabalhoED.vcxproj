@@ -127,12 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bst.c" />
+    <ClCompile Include="AVLTree.c" />
+    <ClCompile Include="BSTree.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Utils.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bst.h" />
+    <ClInclude Include="AVLTree.h" />
+    <ClInclude Include="BSTree.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

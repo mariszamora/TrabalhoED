@@ -20,7 +20,6 @@ typedef struct BSTree {
 } BSTree;
 
 
-
 BSTree* createBSTree();	//retorna um ponteiro para uma BST
 void insertNode(struct BSTree*, char*);
 void inicializeBSTreeUsingDictionary(BSTree *, char *);
@@ -30,24 +29,7 @@ void simplifyText(struct BSTree** tree, char* text, int* counter);//simplifica o
 Dictionary* inicializeDictionary(char* fileLane);
 //inicializa um dictionário
 
-/*
+BSTree* inicializeBSTree(void);
 
-pNodoA* consulta(pNodoA *a, int chave){
-	while (a!=NULL){
-		comp++;
-		if (a->info == chave ){
-			comp++;
-			return a;
-		}
-		else {
-			comp++;
-			if (a->info > chave)
-				a = a->esq;
-				else
-				a = a->dir;
-			}
-		}
-		return NULL;
-	}
 
-*/
+BSTree* consulta(BSTree*, char*, int*);
