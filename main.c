@@ -5,15 +5,13 @@
 #include "Utils.h"
 
 
-
-
 int main(int argc, char *argv[])
 {
 	setlocale(LC_CTYPE, "pt_BR.UTF-8");
 
 	char* inputFileName = NULL;
 	char* outputFileName = NULL;
-	char dicFileName[] = "dicionario.txt";
+	char* dicFileName = "dicionario.txt";
 
 	if (argc == 4)
 		readFileNames(inputFileName, outputFileName, dicFileName, argv);
@@ -29,6 +27,7 @@ int main(int argc, char *argv[])
 	AVLTree* pAVLTree = inicializeAVLTree();
 
 	inicializeBSTreeUsingDictionary(pBSTree, dicFileName);
-	inicializeAVLTreeUsingDictionary(pBSTree, dicFileName);
+	inicializeAVLTreeUsingDictionary(pAVLTree, dicFileName);
+	//void inicializeAVLTreeUsingDictionary(AVLTree* pAVLTree, char* fileName)
 
 }

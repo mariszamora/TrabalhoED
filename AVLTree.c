@@ -1,28 +1,20 @@
 #include "AVLTree.h"
 
 
-AVLTree* inicializeAVLTree(void) {
+AVLTree* inicializeAVLTree() {
 	return NULL;
 }
 
 
-AVLTree* BSTreeSearch(AVLTree* tree, char* searchValue, int* comp) {
+AVLTree* AVLTreeSearch(AVLTree* tree, char* searchValue, int* comp) {
 
-	while (tree != NULL) {
-		*comp++;
-
-		if (tree->content.key == searchValue) {
-			*comp++;
-			return tree;
-		}
-
-		*comp++;
-
-		if (tree->content.key > searchValue)
-			tree = tree->leftTree;
-		else
-			tree = tree->rightTree;
-	}
+	//ToDo: Busca em árvore AVL;
 
 	return NULL;
+}
+
+//ToDo: inserção de nodo, rotações;
+
+void inicializeAVLTreeUsingDictionary(AVLTree* pAVLTree, char* fileName) {
+	//deve inicializar uma árvore AVL, com os dados do arquivo de entrada => dicionário de sinonimos;
 }

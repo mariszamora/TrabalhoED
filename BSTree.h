@@ -1,15 +1,8 @@
 #pragma once
+#include "Dictionary.h"
 
 
 //binary search tree hearder file
-
-typedef struct {
-
-	char* key;	//representa a chave: valor a ser substituido;
-	char* value;	//representa o valor a substituir;
-
-} Dictionary;
-
 
 typedef struct BSTree {
 
@@ -20,16 +13,13 @@ typedef struct BSTree {
 } BSTree;
 
 
-BSTree* createBSTree();	//retorna um ponteiro para uma BST
-void insertNode(struct BSTree*, char*);
+void insertNode(struct BSTree**, Dictionary);
 void inicializeBSTreeUsingDictionary(BSTree *, char *);
 void processTreeInfo(struct BSTree *); //deve gerar as estatística da árvore;
 void simplifyText(struct BSTree** tree, char* text, int* counter);//simplifica o tempo, atualiza o numero de comp;
 
-Dictionary* inicializeDictionary(char* fileLane);
-//inicializa um dictionário
 
 BSTree* inicializeBSTree(void);
 
 
-BSTree* consulta(BSTree*, char*, int*);
+BSTree* BSTreeSearch(BSTree*, char*, int*);

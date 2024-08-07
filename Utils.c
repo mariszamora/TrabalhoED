@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define LINE_DEFAULT_SIZE 30
+#define LINE_DEFAULT_SIZE 40
 //deve implementar as funcoes do utils
 
 void readFileNames(char* inputFile, char* outputFile, char* dicFile, char* argv[]) 
@@ -20,28 +20,44 @@ void setDefaultString(unsigned char* line) {
 	line[LINE_DEFAULT_SIZE] = '\n';
 }
 
-unsigned char* readLine(FILE* pFile, int* VAR_EOF) 
+
+
+char parseString(char caractere) {
+	char caracComAcentos[] = "збЅй…нЌу”ъЏг√х’в¬к оќф‘ыџаји»мћт“щў";
+	char caracSemAcentos[] = "caAeEiIoOuUaAoOaAeEiIoOuUaAeEiIoOuU";
+	for (int i = 0; i < strlen(caracComAcentos); ++i) {
+		if (caractere == caracComAcentos[i]) {
+			return caracSemAcentos[i];
+		}
+	}
+	return caractere;
+}
+
+
+
+char* readLine(FILE* pFile, int* VAR_EOF) 
 {
-	int lineSize = LINE_DEFAULT_SIZE;
-	unsigned char* line = malloc(LINE_DEFAULT_SIZE);
+	char* line = malloc(LINE_DEFAULT_SIZE);
 
 	setDefaultString(line);
 
 	char c = ' ';
-	int readCharCounter = 0;
+	int stringLength = 0;
+	int spaceCounter = 0;
 
 	while ((c = getc(pFile)) != EOF)
 	{
-		if (c != '\n') 
+		c = parseString(c);
+		if (c != '\n')
 		{
-				readCharCounter++;
-				if (readCharCounter > lineSize) 
-				{
-					//TODO: caso precise realocar mem, deve preencher as demais posicoes com 0;
-					//atualmente, estб ficando com lixo de mem;
-				}
+			stringLength++;
+
+			if (stringLength > LINE_DEFAULT_SIZE)
+			{
+				//TODO: realocar mem para s string maior do que o LINE_DEFAULT_SIZE
+			}
 				
-				line[readCharCounter - 1] = c;
+			line[stringLength - 1] = c;
 		}
 		else 
 		{

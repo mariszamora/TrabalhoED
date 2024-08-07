@@ -1,6 +1,6 @@
 #pragma once
 #include <stdio.h>
-#include "BSTree.h"
+#include "Dictionary.h"
 
 //arvore balanceada;
 
@@ -15,9 +15,9 @@ typedef struct AVLTree {
 } AVLTree;
 
 
-AVLTree* inicializeAVLTree(void);
+AVLTree* inicializeAVLTree();
 
 
-AVLTree* BSTreeSearch(AVLTree* tree, char* searchValue, int* comp);
+AVLTree* AVLTreeSearch(AVLTree* tree, char* searchValue, int* comp);
 
 void inicializeAVLTreeUsingDictionary(AVLTree* pAVLTree, char* fileName);
