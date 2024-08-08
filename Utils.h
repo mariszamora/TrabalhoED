@@ -1,6 +1,6 @@
 #pragma once
 #include <stdio.h>
-
+#define LINE_DEFAULT_SIZE 40
 
 //utils related to file r/w
 

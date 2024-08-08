@@ -6,4 +6,4 @@ typedef struct {
 
 } Dictionary;
 
-Dictionary* inicializeDictionary(char* fileLane);
+Dictionary inicializeDictionary(char* line);

@@ -17,20 +17,18 @@ void inicializeBSTreeUsingDictionary(BSTree* pBSTree, char* fileName) {
 
 	//a leitura se dá linha a linha, uma vez que já leu uma linha, deve pular esta na proxima chamada;
 
-	Dictionary* dictionary = NULL;
+	Dictionary dictionary;
 	char* linha = NULL;
 	int VAR_EOF = 0;
 
 	while (!VAR_EOF) {
 
 		linha = readLine(inputFile, &VAR_EOF);
-		printf("%s \n", linha);
+		//printf("%s \n", linha);
 
 		//tendo a linha, chama a funcao que inicializa o dictionary;
-		//dictionary = inicializeDictionary(linha);
+		dictionary = inicializeDictionary(linha);
 
-		//printf("key: %s", dictionary->key);
-		//printf("valeu: %s", dictionary->value);
 		//tendo o dictionary, coloca o nodo da arvore;
 
 		//todo: desalocar mem;

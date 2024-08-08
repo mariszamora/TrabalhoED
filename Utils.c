@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define LINE_DEFAULT_SIZE 40
+
 //deve implementar as funcoes do utils
 
 void readFileNames(char* inputFile, char* outputFile, char* dicFile, char* argv[]) 
