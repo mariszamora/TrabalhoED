@@ -10,7 +10,7 @@ typedef struct AVLTree {
 	struct AVLTree* leftTree;
 	struct AVLTree* rightTree;
 	int balanceFactor;
-	//fator de balanceamento de cada nodo, por padrão 0;
+	//fator de balanceamento de cada nodo, por padrï¿½o 0;
 
 } AVLTree;
 
@@ -21,3 +21,12 @@ AVLTree* inicializeAVLTree();
 AVLTree* AVLTreeSearch(AVLTree* tree, char* searchValue, int* comp);
 
 void inicializeAVLTreeUsingDictionary(AVLTree* pAVLTree, char* fileName);
+
+AVLTree* recalculateBalancingFactor(AVLTree* tree);
+
+int AVLTreeHeight(AVLTree *tree);
+
+AVLTree* rotateRight(AVLTree* p);
+AVLTree* rotateLeft(AVLTree *p);
+AVLTree* rotateDoubleRight(AVLTree* p);
+AVLTree* rotacao_dupla_esquerda (AVLTree *p);
